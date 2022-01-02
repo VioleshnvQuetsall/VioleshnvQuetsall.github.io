@@ -7,6 +7,10 @@ sitemap: false
 hide_last_modified: true
 categories: [ml]
 tags: [ml]
+related_posts:
+  - _posts/Python/2021-09-28-numpy简单神经网络.md
+  - _posts/Python/2021-09-28-numpy反向神经网络学习mnist.md
+  - _posts/Python/2022-01-01-卷积层和池化层的实现.md
 ---
 
 0. this line will be replaced by toc

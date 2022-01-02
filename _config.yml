@@ -51,8 +51,8 @@ author:
 menu:
   - title:             Blog
     url:               /blog/
-  - title:             Projects
-    url:               /projects
+  - title:             Timeline
+    url:               /timeline/
   - title:             About
     url:               /about/
 
@@ -63,8 +63,8 @@ legal:
     url:               /LICENSE/
   - title:             NOTICE
     url:               /NOTICE/
-  - title:             CHANGELOG
-    url:               /CHANGELOG/
+  # - title:             CHANGELOG
+    # url:               /CHANGELOG/
 
 # This text will appear in a `<small>` tag in the footer of every page.
 copyright:             © 2022. All rights reserved.
@@ -80,8 +80,8 @@ paginate_path:         /:num/
 # Theme
 # ---------------------------------------------------------------------------------------
 
-# theme: jekyll-theme-hydejack
-remote_theme: hydecorp/hydejack@v9.0.0-rc.6
+theme: jekyll-theme-hydejack
+# remote_theme: hydecorp/hydejack@v9.0.0-rc.6
 
 
 # Customizaton
@@ -298,9 +298,9 @@ collections:
     permalink:         /tag-:name/
     output:            true
 
-  projects:
-    permalink:         /projects/:path/
-    output:            true
+  # projects:
+  #   permalink:         /projects/:path/
+  #   output:            true
 
 
 # File inclusion/exclusion
@@ -334,7 +334,7 @@ plugins:
   - jekyll-titles-from-headings
   - jekyll-include-cache
   - jekyll-last-modified-at
-  - jekyll-remote-theme
+  # - jekyll-remote-theme
 
 
 # SEO Tag
