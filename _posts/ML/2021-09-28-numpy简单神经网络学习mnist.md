@@ -8,15 +8,15 @@ hide_last_modified: true
 categories: [ml]
 tags: [ml]
 related_posts:
-  - _posts/Python/2021-09-28-numpy简单神经网络.md
-  - _posts/Python/2021-09-28-numpy反向神经网络学习mnist.md
-  - _posts/Python/2022-01-01-卷积层和池化层的实现.md
+  - _posts/ML/2021-09-28-numpy简单神经网络.md
+  - _posts/ML/2021-09-28-numpy反向神经网络学习mnist.md
+  - _posts/ML/2022-01-01-卷积层和池化层的实现.md
 ---
 
 0. this line will be replaced by toc
 {:toc}
 
-根据[上一篇文章]({% post_url /Python/2021-09-28-numpy简单神经网络 %})，来构建神经网络吧
+根据[上一篇文章]({% post_url /ML/2021-09-28-numpy简单神经网络 %})，来构建神经网络吧
 
 1. 明确**输入和输出**
 2. 选择合适的**各种函数**

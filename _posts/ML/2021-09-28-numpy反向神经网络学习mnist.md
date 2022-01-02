@@ -8,15 +8,15 @@ hide_last_modified: true
 categories: [ml]
 tags: [ml]
 related_posts:
-  - _posts/Python/2021-09-28-numpy简单神经网络学习mnist.md
-  - _posts/Python/2021-09-28-numpy简单神经网络.md
-  - _posts/Python/2022-01-01-卷积层和池化层的实现.md
+  - _posts/ML/2021-09-28-numpy简单神经网络学习mnist.md
+  - _posts/ML/2021-09-28-numpy简单神经网络.md
+  - _posts/ML/2022-01-01-卷积层和池化层的实现.md
 ---
 
 0. this line will be replaced by toc
 {:toc}
 
-在[前一篇文章]({% post_url /Python/2021-09-28-numpy简单神经网络学习mnist %})中，已经初略的建立了前向神经网络，但是前向神经网络大量的前馈计算使其只有较低的速度，因此我们来建立反向神经网络。
+在[前一篇文章]({% post_url /ML/2021-09-28-numpy简单神经网络学习mnist %})中，已经初略的建立了前向神经网络，但是前向神经网络大量的前馈计算使其只有较低的速度，因此我们来建立反向神经网络。
 
 **本篇主要是公式**
 
