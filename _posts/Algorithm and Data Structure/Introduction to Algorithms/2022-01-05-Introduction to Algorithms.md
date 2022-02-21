@@ -328,10 +328,6 @@ tags: [algorithm]
   可以取 $$P_{n+1} = 0$$
   
   
-  > 可以与计算机系统相关联
-  {.note title="notice"}
-  
-  
   
   ~~~cpp
   # 1
