@@ -301,7 +301,7 @@ tags: [algorithm]
      
      通过改变 $$k$$ 和数组长度，随着数组长度的变化（$$5000 \to 2^{24}$$）， $$k$$ 没有大幅改变，在此环境上可以认为 $$k$$ 在 $$(32,34)$$ 附近。
      
-     ![image-20220123225051206](assets/img/Introduction to Algorithms.assets/image-20220123225051206.png)
+     ![image-20220123225051206](/assets/img/Introduction to Algorithms.assets/image-20220123225051206.png)
   
 - 霍纳（Horner）规则的正确性
 
@@ -380,11 +380,11 @@ tags: [algorithm]
     plt.show()
     ~~~
   
-    ![image-20220123224946817](assets/img/Introduction to Algorithms.assets/image-20220123224946817.png)
+    ![image-20220123224946817](/assets/img/Introduction to Algorithms.assets/image-20220123224946817.png)
   
     随着数组长度的增加，对已排序数组的插入排序耗时与 $$\lg(n!),n \lg n$$ 接近。事实上 $$\lg(n!),n \lg n$$ 两者也很接近。$$n>300$$ 后，两者的商就小于 $$1.2$$ 了，$$n>30000$$ 后，两者的商就小于 $$1.1$$ 了。
   
-    ![image-20220123230134824](assets/img/Introduction to Algorithms.assets/image-20220123230134824.png)
+    ![image-20220123230134824](/assets/img/Introduction to Algorithms.assets/image-20220123230134824.png)
   
   - 给出 $$\Theta(n \lg n)$$ 的求逆序对数量的算法
   

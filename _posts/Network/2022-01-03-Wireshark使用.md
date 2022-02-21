@@ -20,17 +20,17 @@ Wireshark 是一个拦截和观察网络包的工具。
 
 由于更上层的数据最终都会成为链路层的一个个帧（frame），Wireshark 接受链路层（link-layer）的数据包（packet）的副本后，经过内部的包分析工具（packet analyzer）实现包的拦截和观察。包分析工具可以识别上层协议的结构，逐渐将帧还原为更上层的形式。
 
-![Packet sniffer structure](assets\img\Wireshark使用.assets\image-20220117195144393.png)
+![Packet sniffer structure](/assets/img/Wireshark使用.assets/image-20220117195144393.png)
 
 ### 启动 Wireshark
 
-![Initial Wireshark Screen](assets\img\Wireshark使用.assets\image-20220117200610814.png)
+![Initial Wireshark Screen](/assets/img/Wireshark使用.assets/image-20220117200610814.png)
 
 1 区显示了可供选择的接口，最经常使用的是 WLAN 和以太网。
 
 ---
 
-![Wireshark Graphical User Interface, during packet capture and analysis](assets\img\Wireshark使用.assets\image-20220117200938605.png)
+![Wireshark Graphical User Interface, during packet capture and analysis](/assets/img/Wireshark使用.assets/image-20220117200938605.png)
 
 - 命令菜单栏（文件、编辑、视图、……）；
 - 捕获菜单栏，有各种图标的那一栏，可以对捕获进行各种操作；
@@ -51,6 +51,6 @@ Wireshark 是一个拦截和观察网络包的工具。
 
 5. 在过滤器栏输入 `http`，点击过滤器栏右侧的应用（apply）按钮；
 
-   ![http apply](assets\img\Wireshark使用.assets\image-20220117204359981.png)
+   ![http apply](/assets/img/Wireshark使用.assets/image-20220117204359981.png)
 
 6. 观察捕获的信息。
