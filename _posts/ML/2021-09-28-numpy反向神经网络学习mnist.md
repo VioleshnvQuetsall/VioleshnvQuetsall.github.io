@@ -6,7 +6,7 @@ description: >
 sitemap: false
 hide_last_modified: true
 categories: [ml]
-tags: [ml]
+tags: [numpy, NN]
 related_posts:
   - _posts/ML/2021-09-28-numpy简单神经网络学习mnist.md
   - _posts/ML/2021-09-28-numpy简单神经网络.md
