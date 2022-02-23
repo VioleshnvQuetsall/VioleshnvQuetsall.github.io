@@ -41,11 +41,11 @@ def desc(n_kx: ndarray) -> int:
 > Lp 范数：
 >
 > $$
-> L_p(\pmb{x_i}, \pmb{x_j})=(\sum_{l=1}^n \abs{x_i^{(l)} - x_j^{(l)}}^p) ^ \frac 1 p
+> L_p(\pmb{x_i}, \pmb{x_j})=(\sum_{l=1}^n \lvert x_i^{(l)} - x_j^{(l)} \rvert ^p) ^ \frac 1 p
 > $$
 > 比较特殊的是，当 $$p = \infin$$ 时，有
 > $$
-> L_\infin(\pmb{x_i}, \pmb{x_j})=\max_{l=1}^n \abs{x_i^{(l)} - x_j^{(l)}}
+> L_\infty(\pmb{x_i}, \pmb{x_j})=\max_{l=1}^n \lvert x_i^{(l)} - x_j^{(l)} \rvert
 > $$
 
 **如果确定了 $$k, Dist, Decs$$ 那么，k 近邻算法也就确定了。**
