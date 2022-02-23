@@ -6,7 +6,7 @@ description: >
 sitemap: false
 hide_last_modified: true
 categories: [reading]
-tags: [gametheory]
+tags: [Game Theory]
 ---
 
 0. this line will be replaced by toc
@@ -197,7 +197,7 @@ tags: [gametheory]
 - **合作博弈**（公理化方法）
 
   - **纳什谈判解**
-  
+
     $$
     \begin{array}{|c|c|}
     \hline
@@ -218,9 +218,11 @@ tags: [gametheory]
     如果所有参与人都认可上述三个公理性假设，而且知道对方也认可这些假设（**共同知识**）时，有
     
     $$
-    when\ x+y \le V(x,y),\\
-    and\ W(x,y)=(x-a)^h(y-b)^k\\
-    then\ \frac{y-b}{x-a}=\frac{k}{h}
+    \begin{align*}
+    \text{when } & x+y \le V(x,y) \\
+    \text{and } & W(x,y)=(x-a)^h(y-b)^k \\
+    \text{then } & \frac{y-b}{x-a}=\frac{k}{h}
+    \end{align*}
     $$
     
     - 边际贡献和可替代性：谈判能力$$h,k$$
@@ -353,18 +355,22 @@ $$
   \hline
   B(理性) & X & 背叛 \\
   \hline
-  \end{array} \\
-  W=
-  \begin{cases}
+\end{array} \\
+$$
+
+$$
+W =
+\begin{cases}
     p \times R + (1-p) \times P + p \times P + (1-p) \times P & X=背叛\\
     p \times T + (1-p) \times S + p \times R + (1-p) \times P & X=合作
-  \end{cases}
+\end{cases}
 $$
 
 - 博弈三次
   
 $$
-  \begin{array}{|c|ccc|}
+\begin{align*}
+\begin{array}{|c|ccc|}
   \hline
   & t=1 & t=2 & t=3 \\
   \hline
@@ -373,34 +379,38 @@ $$
   \hline
   B(理性) & X & Y &背叛 \\
   \hline
-  \end{array} \\
+\end{array} \\
 若A选择第一阶段合作则等同于上述两次博弈
+\end{align*}
 $$
   - 博弈三次以上时，存在以下战略组合构成**精炼纳什均衡**
 
 $$
-  provide\ that\ p \ge 0.25,\ for\ any\ T \ge 3 \\
-  A
+\begin{align*}
+\text{provide that } p \ge 0.25,\text{ for any } T \ge 3 \\
+  A = 
   \begin{cases}
-  cooperate & t = 1, 2,\cdots, T-2 \\
-  betray & t = T-1, T
+  \operatorname{cooperate} & t = 1, 2,\cdots, T-2 \\
+  \operatorname{betray} & t = T-1, T
   \end{cases}\\
-  B
+  B =
   \begin{cases}
-  cooperate & t = 1, 2, \cdots, T-1 \\
-  betray & t = T
+  \operatorname{cooperate} & t = 1, 2, \cdots, T-1 \\
+  \operatorname{betray} & t = T
 \end{cases}
+\end{align*}
 $$
 
 - 如果双方都有不完全信息，不论$p$多小，只要博弈次数足够多（不需要无限次），合作就会出现
-    对于任何给定的$p$，存在一个博弈重复次数的临界值$T^*$，但重复次数低于这个临界值时，参与人会选择背叛$\begin{cases}cooperate & 0 \to T-T^* \\betray & T-T^*+1 \to T \end{cases}$
+    对于任何给定的$p$，存在一个博弈重复次数的临界值$T^*$，但重复次数低于这个临界值时，参与人会选择背叛$$\begin{cases}cooperate & 0 \to T-T^* \\betray & T-T^*+1 \to T \end{cases}$$
   
 - 解开“连锁店悖论”
     伪装低成本
   
   - 贝叶斯法则
+
 $$
-    p(\theta^0|g)=\frac{p(g|\theta^0)p(\theta^0)}{p(g)}=\frac{p(g|\theta^0)p(\theta^0)}{p(g|\theta^0)p(\theta^0)+p(g|\theta^1)p(\theta^1)}
+p(\theta^0|g)=\frac{p(g|\theta^0)p(\theta^0)}{p(g)}=\frac{p(g|\theta^0)p(\theta^0)}{p(g|\theta^0)p(\theta^0)+p(g|\theta^1)p(\theta^1)}
 $$
 
 **非对称信息**：交易一方拥有但不被交易的另一方所知道的信息
