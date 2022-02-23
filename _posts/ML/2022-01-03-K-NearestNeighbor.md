@@ -45,7 +45,7 @@ def desc(n_kx: ndarray) -> int:
 > $$
 > L_p(\pmb{x_i}, \pmb{x_j})=(\sum_{l=1}^n \lvert x_i^{(l)} - x_j^{(l)} \rvert ^p) ^ \frac 1 p
 > $$
-> 比较特殊的是，当 $$p = \infin$$ 时，有
+> 比较特殊的是，当 $$p = \infty$$ 时，有
 > $$
 > L_\infty(\pmb{x_i}, \pmb{x_j})=\max_{l=1}^n \lvert x_i^{(l)} - x_j^{(l)} \rvert
 > $$

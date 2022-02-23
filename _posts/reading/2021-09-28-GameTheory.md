@@ -6,7 +6,7 @@ description: >
 sitemap: false
 hide_last_modified: true
 categories: [reading]
-tags: [game theory]
+tags: [gametheory]
 ---
 
 0. this line will be replaced by toc
