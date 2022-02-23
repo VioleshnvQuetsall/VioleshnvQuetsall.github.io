@@ -6,7 +6,7 @@ description: >
 sitemap: false
 hide_last_modified: true
 categories: [reading]
-tags: [reading]
+tags: [game theory]
 ---
 
 0. this line will be replaced by toc
@@ -38,7 +38,7 @@ tags: [reading]
 
   - **明确的**
     - 完备性：喜爱程度是可以比较的
-    - 传递性：$A > B, B > C, then\ A > C$
+    - 传递性：$$A > B, B > C, then\ A > C$$
   - **偏好连续**
     满足程度不会跳跃。可以用函数来刻画选择和满足程度的关系，称为**效用函数**，可以用**无差异曲线**表示。不满足连续性假设的叫做**词典序偏好**
   - **约束条件**
@@ -91,6 +91,7 @@ tags: [reading]
 - **公共产品**：消费起来不会排斥他人的物品或服务，与之相对的是**私人物品**
 
 - **囚徒困境的一般形式**
+
   $$
   \begin{array}{|c|c|c|}
   \hline
@@ -104,7 +105,9 @@ tags: [reading]
   \\
   满足条件R>T>P>S
   $$
-  加入惩罚$X$
+  
+  加入惩罚 $$X$$
+  
   $$
   \begin{array}{|c|c|c|}
   \hline
@@ -194,6 +197,7 @@ tags: [reading]
 - **合作博弈**（公理化方法）
 
   - **纳什谈判解**
+  
     $$
     \begin{array}{|c|c|}
     \hline
@@ -207,17 +211,19 @@ tags: [reading]
     $$
     
     - 帕累托有效：全分配完
+    
   - 线性转换不变性：期望效用水平不受度量的标量影响
     - 对非相关选择的独立性：无关的选择不会影响讨价还价的结果
     
     如果所有参与人都认可上述三个公理性假设，而且知道对方也认可这些假设（**共同知识**）时，有
+    
     $$
     when\ x+y \le V(x,y),\\
     and\ W(x,y)=(x-a)^h(y-b)^k\\
     then\ \frac{y-b}{x-a}=\frac{k}{h}
     $$
     
-    - 边际贡献和可替代性：谈判能力$h,k$
+    - 边际贡献和可替代性：谈判能力$$h,k$$
     - 改变谈判筹码
 
 - **非合作博弈**（战略式方法）
@@ -233,18 +239,19 @@ tags: [reading]
 
     | 轮数 |        分配         |
     | :--: | :-----------------: |
-    |  1   | $1-((1-m)n),(1-m)n$ |
-    |  2   |       $m,1-m$       |
-    |  3   |        $1,0$        |
+    |  1   | $$1-((1-m)n),(1-m)n$$ |
+    |  2   |       $$m,1-m$$       |
+    |  3   |        $$1,0$$        |
 
     - **后动优势**：耐性都足够高，谁最后一轮出价就有优势
     - 越有耐心的人，优势越大
 
   - **无限期谈判和耐心**
-    $假设T>3,\ res(T)=(x,1-x),\ res(T)=res(T-2)$
+    $$假设T>3,\ res(T)=(x,1-x),\ res(T)=res(T-2)$$
     无限期谈判具有**先动优势**
 
-  - **贴现率和谈判力**$mn\ hk$
+  - **贴现率和谈判力**$$mn\ hk$$
+  
     $$
     s=\frac{1-m}{m},\ r=\frac{1-n}{n} \\
     \frac xy = \frac hk \cong \frac rs \\
@@ -289,10 +296,10 @@ tags: [reading]
   - **针锋相对**（tit-for-tat）
   - **触发战略或冷酷战略**（trigger strategy）
 
-- **合作的价值**（$\delta$是对未来的重视程度（贴现因子a）或参与人预期博弈重复的可能性（概率b））$\delta=ab$
-  维持长期合作：$V=T+\delta^1T+\delta^2T+\delta^3T+\cdots=\frac T{1-\delta}$
-  针锋相对$\delta \ge \frac{R-T}{R-P}$时，选择总是背叛不是最优
-  触发战略：$\delta \ge \frac{R-T}{R-P}$可以表述为$\frac{\delta(T-P)}{1-\delta} \ge R-T$，左边是未来损失，右边是当期增加值
+- **合作的价值**（$$\delta$$ 是对未来的重视程度（贴现因子a）或参与人预期博弈重复的可能性（概率b））$$\delta=ab$$
+  维持长期合作：$$V=T+\delta^1T+\delta^2T+\delta^3T+\cdots=\frac T{1-\delta}$$
+  针锋相对 $$\delta \ge \frac{R-T}{R-P}$$ 时，选择总是背叛不是最优
+  触发战略：$$\delta \ge \frac{R-T}{R-P}$$ 可以表述为 $$\frac{\delta(T-P)}{1-\delta} \ge R-T$$ ，左边是未来损失，右边是当期增加值
 
 - 惩罚
 
@@ -306,9 +313,10 @@ tags: [reading]
   欺骗越难被发现，合作越不可能
 
   - **严厉可信惩罚**：欺骗一次，惩罚多次
-    若取三次$T+\delta^1T+\delta^2T+\delta^3T>R+\delta^1P+\delta^2P+\delta^3P$
+    若取三次$$T+\delta^1T+\delta^2T+\delta^3T>R+\delta^1P+\delta^2P+\delta^3P$$
     
   - 惩罚$S$
+    
     $$
     T+\delta T>R+\delta S \to \delta>\frac{R-T}{T-S}\\
     S+\delta T>P+\delta S \to \delta>\frac{P-S}{T-S}
@@ -442,7 +450,7 @@ $$
 
 - **信号传递成本**：高能力的的人和低能力的人有不同的成本
   通过贝叶斯法则判断类型
-- **分离均衡**：$QC \le P-p \lt qC$
+- **分离均衡**：$$QC \le P-p \lt qC$$
   - 激励相容约束：好车有积极性提供保修；坏车没有积极性提供
   - 理性参与约束：无论好车坏车，卖主愿意出售，买主愿意购买
 - **广告的信号传递作用**
