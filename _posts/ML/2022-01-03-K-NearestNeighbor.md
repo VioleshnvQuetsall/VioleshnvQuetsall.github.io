@@ -7,7 +7,9 @@ hide_last_modified: true
 categories: [ml]
 tags: [K-NearestNeighbor]
 related_posts:
-  - ''
+  - _posts/ML/2021-09-28-numpy简单神经网络.md
+  - _posts/ML/2021-09-28-numpy反向神经网络学习mnist.md
+  - _posts/ML/2021-09-28-numpy简单神经网络学习mnist.md
 ---
 
 0. this line will be replaced by the toc
