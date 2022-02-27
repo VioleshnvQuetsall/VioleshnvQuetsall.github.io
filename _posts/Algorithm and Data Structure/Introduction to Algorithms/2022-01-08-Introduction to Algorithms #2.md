@@ -18,11 +18,11 @@ tags: [algorithm]
 
 | 定义                                                         | 名称             | 类比        |
 | ------------------------------------------------------------ | ---------------- | ----------- |
-| $$\Theta(g(n)) = \{ f(n): \exist c_1, c_2,N>0, \forall n \ge N, \text{有 } 0 \le c_1 g(n) \le f(n) \le c_2 g(n) \}$$ | 渐进确界         | $$f = g$$   |
-| $$O(g(n)) = \{ f(n): \exist c,N>0, \forall n \ge N, \text{有 } 0 \le f(n) \le c g(n) \}$$ | 渐进上界         | $$f \le g$$ |
-| $$\Omega(g(n)) = \{ f(n): \exist c, N>0, \forall n \ge N, \text{有 } 0 \le c g(n) \le f(n) \}$$ | 渐进下界         | $$f \ge g$$ |
-| $$o(g(n)) = \{ f(n): \forall c, \exist N>0, \forall n \ge N, \text{有 } 0 \le f(n) \lt c g(n) \}$$ | 非渐进紧确的上界 | $$f \lt g$$ |
-| $$\omega(g(n)) = \{ f(n): \forall c, \exist N>0, \forall n \ge N, \text{有 } 0 \le c g(n) \lt f(n) \}$$ | 非渐进紧确的下界 | $$f \gt g$$ |
+| $$\Theta(g(n)) = \{ f(n): \exists c_1, c_2,N>0, \forall n \ge N, \text{有 } 0 \le c_1 g(n) \le f(n) \le c_2 g(n) \}$$ | 渐进确界         | $$f = g$$   |
+| $$O(g(n)) = \{ f(n): \exists c,N>0, \forall n \ge N, \text{有 } 0 \le f(n) \le c g(n) \}$$ | 渐进上界         | $$f \le g$$ |
+| $$\Omega(g(n)) = \{ f(n): \exists c, N>0, \forall n \ge N, \text{有 } 0 \le c g(n) \le f(n) \}$$ | 渐进下界         | $$f \ge g$$ |
+| $$o(g(n)) = \{ f(n): \forall c, \exists N>0, \forall n \ge N, \text{有 } 0 \le f(n) \lt c g(n) \}$$ | 非渐进紧确的上界 | $$f \lt g$$ |
+| $$\omega(g(n)) = \{ f(n): \forall c, \exists N>0, \forall n \ge N, \text{有 } 0 \le c g(n) \lt f(n) \}$$ | 非渐进紧确的下界 | $$f \gt g$$ |
 
 
 - 传递性
@@ -68,7 +68,7 @@ $$n! = \sqrt{2 \pi n}(\frac n{\rm e})^n(1+\Theta(\frac 1n))$$
 
 $$\lg^*n = \min\{ i \ge 0: \lg^{(i)}n \le 1 \}$$
 
-若 $$\exist k[f(n) = O(n^k)]$$，则称 $$f(n)$$ **多项式有界**；若 $$\exist k[f(n) = O(\lg^kn)]$$，则称 $$f(n)$$ **多对数有界**。
+若 $$\exists k[f(n) = O(n^k)]$$，则称 $$f(n)$$ **多项式有界**；若 $$\exists k[f(n) = O(\lg^kn)]$$，则称 $$f(n)$$ **多对数有界**。
 
 ### 练习
 
@@ -109,7 +109,7 @@ $$\lg^*n = \min\{ i \ge 0: \lg^{(i)}n \le 1 \}$$
 
   $$O(n^2)$$ 表示的所有渐进时间在 $$n^2$$ 以下的函数
 
-- 证明：$$f(n) = \Theta(g(n)) \iff f(n) = O(g(n)) \and f(n) = \Omega(g(n))$$
+- 证明：$$f(n) = \Theta(g(n)) \iff f(n) = O(g(n)) \wedge f(n) = \Omega(g(n))$$
 
   $$
   \begin{align*}
@@ -216,9 +216,9 @@ $$\lg^*n = \min\{ i \ge 0: \lg^{(i)}n \le 1 \}$$
   \end{align*}
   $$
 
-- $$\overset{\infty}{\Omega}(g(n)) = \{ f(n): \exist c,\text{对无穷多个整数 }n, 0 \le cg(n) \le f(n) \}$$
+- $$\overset{\infty}{\Omega}(g(n)) = \{ f(n): \exists c,\text{对无穷多个整数 }n, 0 \le cg(n) \le f(n) \}$$
 
-  证明：$$\forall f,g\in\text{渐进非负函数}[f(n) = O(g(n)) \or f(n) = \overset{\infty}{\Omega}(g(n))] = \bf T$$，$$\forall f,g[f(n) = O(g(n)) \and f(n) = \Omega(g(n))] = \bf F$$
+  证明：$$\forall f,g\in\text{渐进非负函数}[f(n) = O(g(n)) \vee f(n) = \overset{\infty}{\Omega}(g(n))] = \bf T$$，$$\forall f,g[f(n) = O(g(n)) \wedge f(n) = \Omega(g(n))] = \bf F$$
 
   $$
   \begin{align*}
