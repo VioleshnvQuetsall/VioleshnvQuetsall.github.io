@@ -29,11 +29,11 @@ tags: [algorithm]
 
   $$
   \begin{align*}
-  f(n) = \Theta(g(n)) \and g(n) = \Theta(h(n)) &\to f(n) = \Theta(h(n)), \\
-  f(n) = O(g(n)) \and g(n) = O(h(n)) &\to f(n) = O(h(n)), \\
-  f(n) = \Omega(g(n)) \and g(n) = \Omega(h(n)) &\to f(n) = \Omega(h(n)), \\
-  f(n) = o(g(n)) \and g(n) = o(h(n)) &\to f(n) = o(h(n)), \\
-  f(n) = \omega(g(n)) \and g(n) = \omega(h(n)) &\to f(n) = w(h(n)). \\
+  f(n) = \Theta(g(n)) \wedege g(n) = \Theta(h(n)) &\to f(n) = \Theta(h(n)), \\
+  f(n) = O(g(n)) \wedege g(n) = O(h(n)) &\to f(n) = O(h(n)), \\
+  f(n) = \Omega(g(n)) \wedege g(n) = \Omega(h(n)) &\to f(n) = \Omega(h(n)), \\
+  f(n) = o(g(n)) \wedege g(n) = o(h(n)) &\to f(n) = o(h(n)), \\
+  f(n) = \omega(g(n)) \wedege g(n) = \omega(h(n)) &\to f(n) = w(h(n)). \\
   \end{align*}
   $$
 
@@ -113,9 +113,9 @@ $$\lg^*n = \min\{ i \ge 0: \lg^{(i)}n \le 1 \}$$
 
   $$
   \begin{align*}
-  f(n) = \Theta(g(n)) &\iff \exist c_1, c_2,N>0, \forall n \ge N, \text{有 } 0 \le c_1 g(n) \le f(n) \le c_2 g(n), \\
-  f(n) = \Omega(f(n)) &\iff \exist c_1,N>0, \forall n \ge N, \text{有 } 0 \le c_1 g(n) \le f(n), \\
-  f(n) = O(g(n)) &\iff \exist c_2,N>0, \forall n \ge N, \text{有 } 0 \le f(n) \le c_2 g(n), \\
+  f(n) = \Theta(g(n)) &\iff \exists c_1, c_2,N>0, \forall n \ge N, \text{有 } 0 \le c_1 g(n) \le f(n) \le c_2 g(n), \\
+  f(n) = \Omega(f(n)) &\iff \exists c_1,N>0, \forall n \ge N, \text{有 } 0 \le c_1 g(n) \le f(n), \\
+  f(n) = O(g(n)) &\iff \exists c_2,N>0, \forall n \ge N, \text{有 } 0 \le f(n) \le c_2 g(n), \\
   \end{align*}
   $$
 
@@ -124,16 +124,16 @@ $$\lg^*n = \min\{ i \ge 0: \lg^{(i)}n \le 1 \}$$
 - 证明：$$o(g(n)) \cap \omega(g(n)) = \varnothing$$
 
   $$
-  o(g(n)) \cap \omega(g(n)) = \{ f(n): \forall c,N>0, \exist n \ge N, \text{有 } 0 \le cg(n) < f(n) \lt c g(n) \} = \varnothing
+  o(g(n)) \cap \omega(g(n)) = \{ f(n): \forall c,N>0, \exists n \ge N, \text{有 } 0 \le cg(n) < f(n) \lt c g(n) \} = \varnothing
   $$
 
 - 给出有两个参数的记号
 
   $$
   \begin{align*}
-  \Theta(g(n,m)) &= \{ f(n,m): \exist c_1, c_2,N,M(n \ge N \or m \ge M \to 0 \le c_1g(n,m) \le f(n,m) \le c_2g(n,m)) \}, \\
-  O(g(n,m)) &= \{ f(n,m): \exist c,N,M(n \ge N \or m \ge M \to 0 \le f(n,m) \le cg(n,m)) \}, \\
-  \Omega(g(n,m)) &= \{ f(n,m): \exist c,N,M(n \ge N \or m \ge M \to 0 \le cg(n,m)) \le f(n,m) \}. \\
+  \Theta(g(n,m)) &= \{ f(n,m): \exists c_1, c_2,N,M(n \ge N \vee m \ge M \to 0 \le c_1g(n,m) \le f(n,m) \le c_2g(n,m)) \}, \\
+  O(g(n,m)) &= \{ f(n,m): \exists c,N,M(n \ge N \vee m \ge M \to 0 \le f(n,m) \le cg(n,m)) \}, \\
+  \Omega(g(n,m)) &= \{ f(n,m): \exists c,N,M(n \ge N \vee m \ge M \to 0 \le cg(n,m)) \le f(n,m) \}. \\
   \end{align*}
   $$
 
@@ -199,7 +199,7 @@ $$\lg^*n = \min\{ i \ge 0: \lg^{(i)}n \le 1 \}$$
   \lg{g(n)} \ge 1 \\
   f(n) \ge 1 \\
   \end{cases} \\\implies &
-  \exist c,N>0, \forall n \ge N[0 \le f(n) \le c g(n)]  \\\implies &
+  \exists c,N>0, \forall n \ge N[0 \le f(n) \le c g(n)]  \\\implies &
   \lg f(n) \le \lg(c g(n)) = \lg c + \lg g(n) \\\implies &
   \lg f(n) = O(\lg g(n)) \\
   \end{align*}
@@ -208,9 +208,9 @@ $$\lg^*n = \min\{ i \ge 0: \lg^{(i)}n \le 1 \}$$
   $$
   \begin{align*}
   g(n) = o(f(n)) 
-  \implies& \forall c \ge 0, \exist N > 0, \forall n \ge N, 0 \le g(n) \le cf(n)
+  \implies& \forall c \ge 0, \exists N > 0, \forall n \ge N, 0 \le g(n) \le cf(n)
   \\\implies&
-  \forall c \ge 0, \exist N > 0, \forall n \ge N, 0 \le f(n) \le f(n) + g(n) \le (1+c)f(n)
+  \forall c \ge 0, \exists N > 0, \forall n \ge N, 0 \le f(n) \le f(n) + g(n) \le (1+c)f(n)
   \\\implies&
   f(n) + o(f(n)) = \Theta(f(n)).
   \end{align*}
@@ -222,12 +222,12 @@ $$\lg^*n = \min\{ i \ge 0: \lg^{(i)}n \le 1 \}$$
 
   $$
   \begin{align*}
-  \neg[f(n) = O(g(n))] &= \neg[\exist c,N>0, \forall n \ge N(0 \le f(n) \le c g(n))] \\
-                       &= \forall c,N>0, \exist n \ge N[cg(n) < f(n)], \\[2em]
+  \neg[f(n) = O(g(n))] &= \neg[\exists c,N>0, \forall n \ge N(0 \le f(n) \le c g(n))] \\
+                       &= \forall c,N>0, \exists n \ge N[cg(n) < f(n)], \\[2em]
   &\text{不妨依次取 } n = n_i, N_i = n_i, (i < j \implies n_i < n_j), \\
   &\text{则显然 }\forall N \text{ 意味着 $n$ 有无穷个, 这与 $\overset{\infty}{\Omega}(g(n))$ 定义相合} \\
   &\text{即 }\neg[f(n) = O(g(n))] \to f(n) = \overset{\infty}{\Omega}(g(n)), \\
-  &\text{由 }\neg p \to q \equiv p \or q \text{ 得证}.
+  &\text{由 }\neg p \to q \equiv p \vee q \text{ 得证}.
   \end{align*}
   $$
 
