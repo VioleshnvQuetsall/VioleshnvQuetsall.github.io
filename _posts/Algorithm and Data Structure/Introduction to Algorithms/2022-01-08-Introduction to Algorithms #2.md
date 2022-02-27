@@ -29,11 +29,11 @@ tags: [algorithm]
 
   $$
   \begin{align*}
-  f(n) = \Theta(g(n)) \wedege g(n) = \Theta(h(n)) &\to f(n) = \Theta(h(n)), \\
-  f(n) = O(g(n)) \wedege g(n) = O(h(n)) &\to f(n) = O(h(n)), \\
-  f(n) = \Omega(g(n)) \wedege g(n) = \Omega(h(n)) &\to f(n) = \Omega(h(n)), \\
-  f(n) = o(g(n)) \wedege g(n) = o(h(n)) &\to f(n) = o(h(n)), \\
-  f(n) = \omega(g(n)) \wedege g(n) = \omega(h(n)) &\to f(n) = w(h(n)). \\
+  f(n) = \Theta(g(n)) \wedge g(n) = \Theta(h(n)) &\to f(n) = \Theta(h(n)), \\
+  f(n) = O(g(n)) \wedge g(n) = O(h(n)) &\to f(n) = O(h(n)), \\
+  f(n) = \Omega(g(n)) \wedge g(n) = \Omega(h(n)) &\to f(n) = \Omega(h(n)), \\
+  f(n) = o(g(n)) \wedge g(n) = o(h(n)) &\to f(n) = o(h(n)), \\
+  f(n) = \omega(g(n)) \wedge g(n) = \omega(h(n)) &\to f(n) = w(h(n)). \\
   \end{align*}
   $$
 
