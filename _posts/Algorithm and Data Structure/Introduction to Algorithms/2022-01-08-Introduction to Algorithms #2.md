@@ -9,7 +9,8 @@ categories: [algorithm]
 tags: [algorithm]
 ---
 
-
+0. his line will be replaced by the toc
+{:toc}
 
 ## 函数
 
