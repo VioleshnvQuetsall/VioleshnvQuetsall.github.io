@@ -10,7 +10,7 @@ tags: [Types and Programming Languages]
 ---
 
 0. this line will be replaced by the toc
-{.toc}
+{:toc}
 
 ## 无类型系统
 

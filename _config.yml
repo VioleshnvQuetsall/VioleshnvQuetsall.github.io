@@ -31,7 +31,7 @@ description:           >
 tagline:               Recording
 
 # A list of keywords for your blog
-keywords:              [ML, C/C++]
+keywords:              [CS, ML, C/C++]
 
 # A (square) logo for your site.
 # If provided, it will be shown at the top of the sidebar.
@@ -43,7 +43,7 @@ author:
   # Used by `jekyll-feed`:
   name:                Violeshnv Quetsall
   email:               violeshnv@163.com
-  about:               Nobody is here, but still some traces left
+  about:               一名贝叶斯主义者
   # # Used by `jekyll-seo-tag`:
   # twitter:             <username>
 
