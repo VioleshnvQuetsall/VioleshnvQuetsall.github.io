@@ -2,7 +2,7 @@
 layout: post
 title: 类型系统与程序语言——无类型系统
 description: >
-  Types and Programming Languages 导引章节记录
+  Types and Programming Languages #1 导引章节记录
 sitemap: false
 hide_last_modified: true
 categories: [cs]
@@ -150,9 +150,9 @@ $$
 
 ##### 求值
 
-![Boolean](/assets/img/Types and Programming Languages.assets/image-20220403091138831.png)
+![Boolean](/assets/img/Types and Programming Languages #1.assets/image-20220403091138831.png)
 
-![Arithmetic Expressions](/assets/img/Types and Programming Languages.assets/image-20220403091234091.png)
+![Arithmetic Expressions](/assets/img/Types and Programming Languages #1.assets/image-20220403091234091.png)
 
 图片显示了无类型表达式中的两种成分：Boolean 和自然数的运算。左侧为语法，展示了语言的所有成员，包括 term 和 value，term 和 value 的区别就是 value 是不可再求值的，term 包含 value；右侧为语义，其实也就是一系列推演规则，展示如何在各种前提（或无需前提）下做到 $$t\to t'$$，“$$\to$$” 是一个非常关键的算符，称为“单步求值”，将 term 逐步计算为 value。
 
@@ -176,7 +176,7 @@ $$
 
 Lambda 演算是一种形式化系统，在该系统中所有计算都被归约为函数的定义（definition）和应用（application）上的各种操作。如果说无类型算数表达式是过程式语言，那么无类型 Lambda 表达式就是函数式语言了。
 
-![Untyped Lambda-Calculus](/assets/img/Types and Programming Languages.assets/image-20220403104450989.png)
+![Untyped Lambda-Calculus](/assets/img/Types and Programming Languages #1.assets/image-20220403104450989.png)
 
 #### 语法
 
