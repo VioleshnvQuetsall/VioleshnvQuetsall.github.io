@@ -8,7 +8,7 @@ Violeshnv:
   # Used at the bottom of each page and at the top of the `about` layout
   # Markdown enabled, can use multiple paragraphs (enabled by `|`)
   about:             |
-    Nobody is here, but still some traces left
+    贝叶斯主义者
 
   # This photo will be used in the about section
   picture:
