@@ -128,7 +128,28 @@ depth(\text{if $t_1$ then $t_2$ else $t_3$}) &= \max{(depth(t_1) + depth(t_2) + 
 \end{array}
 $$
 
-由于 $$\mathcal T$$ 的归纳定义方法，term 的多种性质可以使用归纳法证明。
+由于 $$\mathcal T$$ 的归纳定义方法，term 的多种性质可以使用归纳法（以及分类讨论）证明。
+
+比如，证明 $$\text{if $t\to t'$ and $t\to t''$, then $t'=t''$}$$：
+
+$$
+\begin{align*}
+t' &=
+\begin{cases}
+t_2 & \text{$t=$ if $true$ then $t_2$ else $t_3$} \\
+t_3 & \text{$t=$ if $false$ then $t_2$ else $t_3$} \\
+\text{if $t_1'$ then $t_2$ else $t_3$} & \text{$t=$ if $t_1$ then $t_2$ else $t_3$} \\
+\end{cases} \\
+t'' &=
+\begin{cases}
+t_2 & \text{$t=$ if $true$ then $t_2$ else $t_3$} \\
+t_3 & \text{$t=$ if $false$ then $t_2$ else $t_3$} \\
+\text{if $t_1''$ then $t_2$ else $t_3$} & \text{$t=$ if $t_1$ then $t_2$ else $t_3$} \\
+\end{cases}
+\end{align*}
+$$
+
+虽然 $$t$$ 有三种形式，但显然只有第三种情况有区别，如果 $$t_1'=t_1''$$，则 $$t'=t''$$，这里就需要归纳论证了。
 
 #### 语义
 
@@ -334,13 +355,21 @@ def pred(n: int) -> int:
 $$
 \begin{align*}
 \operatorname{initialize} &= \operatorname{pair}\ 0\ 0 \\
-\operatorname{increase} &= \lambda p.\operatorname{pair}\ {\operatorname{second}\ p}\ (+\ 1\ (\operatorname{second}\ p)) \\
+\operatorname{increase} &= \lambda p.\operatorname{pair}\ ({\operatorname{second}\ p})\ (+\ 1\ (\operatorname{second}\ p)) \\
 \operatorname{pred} &= \lambda m.\operatorname{first}\ (m\ \operatorname{increase}\ \operatorname{initialize}) \\
-- &= \lambda m.\lambda n.\lambda f.\lambda x.m\ \operatorname{pred}\ n \\
+- &= \lambda m.\lambda n.n\ \operatorname{pred}\ m \\
 \end{align*}
 $$
 
 除法在这里就不列出具体实现了，只列出其思想：也需要一个序偶，一个数记录减法次数，另一个数记录被减数，多次减法后取减法次数即可。
+
+$$
+\begin{align*}
+\operatorname{iszero} &= \lambda n.n\ (\lambda \_.\operatorname{false}) \operatorname{true} \\
+\operatorname{equal} &= \lambda m.\lambda n.\operatorname{and}\ (\operatorname{iszero}\ (-\ m\ n))\ (\operatorname{iszero}\ (-\ n\ m))
+\end{align*}
+$$
+
 
 #### 拓展
 
@@ -386,3 +415,22 @@ $$
 要注意 $$[]$$ 内的两个 $$f$$ 含义不同，左边的为 $$f_f$$ 中的 $$f$$，右边的为我们要求的递归函数 $$f$$。
 
 最后的结果表明：$$f_f$$ 内的 $$f$$ 是对 $$(\lambda y.f\ y)$$ 的再一次应用，其中的 $$y$$ 其实在 $$f_f$$ 中会被 $$c(x)$$ 替换。由于 $$\lambda y.f\ y \leftrightarrow \lambda y.rec\ rec\ y$$，所以在 $$f$$ 的展开中并没有再次出现 $$f$$，这只是计算上的等价替换，并不是在函数体中再次调用了 $$f$$。
+
+##### 链表
+
+一个链表 $$[x,y,z]$$ 是形如 $$\lambda c.\lambda n.c\ x\ (c\ y\ (c\ z\ n))$$ 的函数，在其他语言被称为 $$reduce$$。
+
+链表相关运算
+
+$$
+\begin{align*}
+\operatorname{nil} &= \lambda c.\lambda n.n \\
+\operatorname{cons} &= \lambda h.\lambda t.\lambda c.\lambda n.c\ h\ (t\ c\ n) \\
+\operatorname{isnil} &= \lambda t.t\ (\lambda\_.\lambda\_.\operatorname{false})\ \operatorname{true} \\
+\operatorname{head} &= \lambda t.t\ \operatorname{true}\ 0 \\
+\operatorname{initialize} &= \operatorname{pair}\ \operatorname{nil}\ \operatorname{nil} \\
+\operatorname{increase} &= \lambda x.\lambda p.\operatorname{pair}\ ({\operatorname{second}\ p})\ (\operatorname{cons}\ x\ (\operatorname{second}\ p)) \\
+\operatorname{tail} &= \lambda t.\operatorname{first}\ (t\ \operatorname{increase}\ \operatorname{initialize}) \\
+\end{align*}
+$$
+
