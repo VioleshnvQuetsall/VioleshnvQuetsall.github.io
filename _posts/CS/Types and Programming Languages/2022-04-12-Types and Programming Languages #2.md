@@ -274,9 +274,9 @@ $$
 
 $$
 \begin{align*}
-\operatorname{letrec}+ &= \text{if iszero $m$ then $n$ else $+\ (\operatorname{pred}m)\ (\operatorname{succ}n)$} \\
-\operatorname{letrec}\times &= \text{if iszero $m$ then $0$ else $+\ n\ (\times\ (\operatorname{pred}m)\ n)$} \\
-\operatorname{letrec}factorial &= \text{if iszero $n$ then $1$ else $\times\ n\ (factorial\ (\operatorname{pred}n))$} \\
+\operatorname{letrec}+ &= \lambda m.\lambda n.\text{if iszero $m$ then $n$ else $+\ (\operatorname{pred}m)\ (\operatorname{succ}n)$} \\
+\operatorname{letrec}\times &= \lambda m.\lambda n.\text{if iszero $m$ then $0$ else $+\ n\ (\times\ (\operatorname{pred}m)\ n)$} \\
+\operatorname{letrec}factorial &= \lambda n.\text{if iszero $n$ then $1$ else $\times\ n\ (factorial\ (\operatorname{pred}n))$} \\
 \end{align*}
 $$
 
