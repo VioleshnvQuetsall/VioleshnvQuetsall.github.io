@@ -38,7 +38,6 @@ def desc(n_kx: ndarray) -> int:
 ~~~
 
 代码仅作示意，不保证能运行
-{.note title="notice"}
 
 > Lp 范数：
 >
