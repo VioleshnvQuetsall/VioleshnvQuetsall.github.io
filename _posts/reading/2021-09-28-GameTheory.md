@@ -1,5 +1,4 @@
 ---
-layout: post
 title: 博弈论
 description: >
   学习博弈论时所做的笔记

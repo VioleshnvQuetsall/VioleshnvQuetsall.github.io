@@ -1,5 +1,4 @@
 ---
-layout: post
 title: K-NN 算法
 description: 机器学习--K-NN算法
 sitemap: false

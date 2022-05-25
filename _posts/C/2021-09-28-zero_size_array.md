@@ -1,5 +1,4 @@
 ---
-layout: post
 title: C语言结构体中的零长数组
 description: >
   初学C语言时的探究

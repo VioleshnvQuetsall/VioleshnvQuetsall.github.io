@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Git 使用笔记
 description: >
   学习 Git 时所做的笔记

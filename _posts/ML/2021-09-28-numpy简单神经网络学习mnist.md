@@ -1,5 +1,4 @@
 ---
-layout: post
 title: 用numpy实现最简单的前馈神经网络——正向网络建立篇
 description: >
   正向网络建立

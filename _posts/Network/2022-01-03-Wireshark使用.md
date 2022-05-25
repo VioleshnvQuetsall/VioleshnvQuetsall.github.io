@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Wireshark使用入门
 description: >
   Wireshark入门

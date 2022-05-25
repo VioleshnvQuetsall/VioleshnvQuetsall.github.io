@@ -1,5 +1,4 @@
 ---
-layout: post
 title: 自控力
 description: >
   学习自控力时所做的笔记

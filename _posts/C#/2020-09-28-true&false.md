@@ -1,5 +1,4 @@
 ---
-layout: post
 title: C#中 `true` 和 `false` 运算符的使用
 description: >
   学习C#时所做的笔记

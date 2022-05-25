@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Python 注释解析
 description: >
   如何正确使用Python注释
