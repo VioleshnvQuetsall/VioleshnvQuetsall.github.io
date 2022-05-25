@@ -1,12 +1,10 @@
 ---
-layout: post
 title: 类型系统与程序语言——简单类型
 description: >
   Types and Programming Languages 导引章节记录
 sitemap: false
 hide_last_modified: true
 categories: [cs]
-mathjax: true
 tags: [Types and Programming Languages]
 ---
 
