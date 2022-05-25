@@ -1,5 +1,4 @@
 ---
-layout: post
 title: 绪论
 description: >
   数据结构--绪论

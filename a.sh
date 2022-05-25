@@ -1,8 +1,5 @@
 #!/bin/bash
 
-for f in $(find ./_posts); do
-	if [ -f "$f" ]; then
-		sed -i '/^layout:/d' "$f"
-	fi
-	echo $f
-done	
+find ./_posts | while read f; do
+	sed -i '/^layout:/d' "$f"
+done

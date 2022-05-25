@@ -1,5 +1,4 @@
 ---
-layout: post
 title: 为什么说“We must not include limits.h!”
 description: >
   看头文件时发现的

@@ -1,5 +1,4 @@
 ---
-layout: post
 title: 《算法导论》第二章
 description: >
   《算法导论》第二章（笔记、作业）

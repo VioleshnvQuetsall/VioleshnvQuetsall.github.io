@@ -1,5 +1,4 @@
 ---
-layout: post
 title: 类型系统与程序语言——无类型系统
 description: >
   Types and Programming Languages 导引章节记录
