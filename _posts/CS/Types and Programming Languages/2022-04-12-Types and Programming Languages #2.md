@@ -6,6 +6,7 @@ description: >
 sitemap: false
 hide_last_modified: true
 categories: [cs]
+mathjax: true
 tags: [Types and Programming Languages]
 ---
 
