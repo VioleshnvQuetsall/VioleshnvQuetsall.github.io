@@ -34,9 +34,6 @@ related_posts:
 
   特征直接不能存在线性关系
 
-
-
-
 $$
 \begin{align*}
 y&=\sum_iw^{(i)}\phi_i(\pmb x)+\epsilon=\pmb w^T\pmb x+\epsilon\\
@@ -62,6 +59,7 @@ $$\pmb x$$ 经过 $$j$$ 个基函数（basis function） $$\phi_j$$ 转为新的
 ### 最小二乘估计和最小二乘反演
 
 依照 $$\pmb\Phi$$ 左逆和右逆的存在情况。
+
 $$
 \begin{align*}
 &&{\pmb\Phi}&=\begin{pmatrix}
@@ -75,7 +73,6 @@ $$
 \text{then}&&\pmb w&=({\pmb\Phi}^T{\pmb\Phi})^{-1}{\pmb\Phi}^T\pmb y\\
 \end{align*}
 $$
-
 
 $$
 \begin{align*}
@@ -111,7 +108,6 @@ $$
 而右逆中则是特征数量大于样本数量， $$\pmb\Phi$$ 变换是从高维空间向量 $$\pmb w$$ 到低维空间向量 $$\pmb y$$ 的变换，这个变换必定有解，而且可能不止一个。$$\pmb w_{mn}=\pmb\Phi^T(\pmb\Phi\pmb\Phi^T)^{-1}\cdot\pmb y$$ 这个相等其实是在 $$\pmb\Phi$$ 变换下的具有最小范数的向量。取得这个最小范数的关键在于 $$\pmb w_{mn}$$ 处于 $$\pmb\Phi^T$$ 的线性空间中，即 存在 $$\pmb w_{mn}=\pmb\Phi^T\pmb b,\pmb b=({\pmb\Phi}{\pmb\Phi}^T)^{-1}\pmb y$$。从图形上看，$$\pmb w_{mn}$$ 映射到 $$\pmb y$$ 是直接投影，$$\pmb w_0-\pmb w_{mn}$$ 则是与 $$\pmb\Phi^T$$ 正交的向量，总是投影到零空间，因此与 $$\pmb w_{mn}$$ 相加不改变投影结果，但会增加范数。
 
 
-
 > $$
 > \begin{align*}
 > A.shape&=(m,n)\\
@@ -123,10 +119,10 @@ $$
 > $$
 
 
-
 #### 梯度下降法
 
 使用 Mean-Squared-Error (MSE) 作为损失函数，损失为 $$\epsilon$$
+
 $$
 \begin{align*}
 \epsilon_i&=\frac12\left(y^{(i)}-[\pmb{\phi}^{(i)}]^T\pmb w\right)^2\\
@@ -137,6 +133,7 @@ $$
 $$
 
 $$E$$ 为求样品平均的函数，比如 $$E\left[[y^{(i)}]^2\right]\to \frac1N\sum_{i=1}^{N}[y^{(i)}]^2$$
+
 $$
 \begin{align*}
 \text{let }&C=E\left[[y^{(i)}]^2\right],P^T=E\left[y^{(i)}[\pmb{\phi}^{(i)}]^T\right],R=E\left[\pmb{\phi}^{(i)}[\pmb{\phi}^{(i)}]^T\right]\\
@@ -144,7 +141,7 @@ $$
 \end{align*}
 $$
 
-对每个样本损失 $$\epsilon$$，求其关于 $$\pmb w$$ 的梯度 $$\nabla_{\pmb w}\epsilon=-P+\frac12(R+R^T)\pmb w\xlongequal{R \ 对称}-P+R\pmb w$$
+对每个样本损失 $$\epsilon$$，求其关于 $$\pmb w$$ 的梯度 $$\nabla_{\pmb w}\epsilon=-P+\frac12(R+R^T)\pmb w\overset{R \ 对称}{\longrightarrow}-P+R\pmb w$$
 
 令 $$\pmb w\leftarrow\pmb w-\eta\nabla_{\pmb w}\epsilon$$，其中 $$\eta$$ 为超参数学习率，则完成一步梯度下降。
 
@@ -152,7 +149,7 @@ $$
 
 > $$\nabla_{\pmb x}{\pmb x}^T\pmb a=\nabla_{\pmb x}{\pmb a}^T\pmb x=\pmb a$$
 >
-> $$\nabla_{\pmb x}{\pmb x}^T\pmb A\pmb x=(\pmb A+{\pmb A}^T)\pmb x\xlongequal{A\text{ 为对称矩阵}}2\pmb A\pmb x$$
+> $$\nabla_{\pmb x}{\pmb x}^T\pmb A\pmb x=(\pmb A+{\pmb A}^T)\pmb x\overset{A\text{ 为对称矩阵}}{\longrightarrow}2\pmb A\pmb x$$
 
 由所使用的训练集的大小，可以区分出三种梯度下降法：<abbr title="Batch Gradient Descent">BGD</abbr>、<abbr title="Stochastic Gradient Descent ">SGD</abbr>、<abbr title="Mini-batch Gradient Descent">Mini Batch GD</abbr>。
 
@@ -185,7 +182,7 @@ v^{(1)}\\
 v^{(i)}\\
 \end{pmatrix},\\[0.8cm]
 \pmb Y_i&=\pmb H_i\pmb X_i+\pmb V_i\\
-\hat{\pmb X}_i&=(\pmb H^T_i\pmb H_i)^{-1}\pmb H^T_i\pmb Y_i\xlongequal{\pmb M_i=(\pmb H^T_i\pmb H_i)^{-1}}\pmb M_i\pmb H^T_i\pmb Y_i,\\[0.2cm]
+\hat{\pmb X}_i&=(\pmb H^T_i\pmb H_i)^{-1}\pmb H^T_i\pmb Y_i\overset{\pmb M_i=(\pmb H^T_i\pmb H_i)^{-1}}{======}\pmb M_i\pmb H^T_i\pmb Y_i,\\[0.2cm]
 \text{notice that }&\pmb H^T_i\pmb H_i=\pmb H^T_{i-1}\pmb H_{i-1}+\pmb h_i\pmb h_i^T,\\
 \text{therefore, }&\pmb M_i = (\pmb M^{−1}_{i−1} +\pmb h_i\pmb h^T_i )^{−1}=\pmb M_{i-1}-{\pmb M_{i-1}\pmb h_i\pmb h_i^T\pmb M_{i-1}\over\pmb I_i+\pmb h_i^T\pmb M_{i-1}\pmb h_i}\\
 \hat{\pmb X}_i&=\pmb M_i\pmb H^T_i\pmb Y_i\\
@@ -195,6 +192,7 @@ v^{(i)}\\
 $$
 
 使用递归最小二乘则可以使用 $$\pmb w=R^{-1}P$$ 求解。
+
 $$
 \begin{align*}
 P^T_N&=E\left[y^{(i)}[\pmb{\phi}^{(i)}]^T\right]\\

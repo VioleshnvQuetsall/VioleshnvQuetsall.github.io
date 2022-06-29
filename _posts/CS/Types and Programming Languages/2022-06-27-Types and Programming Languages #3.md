@@ -23,13 +23,13 @@ $$S<:T$$ 表示任何类型为 $$S$$ 的值类型也可以是 $$T$$，即 $$S$$ 
 
 添加一个超类 $$Top$$ 和子类型的相关语法（自反性、传递性等）。
 
-![Simply typed lambda-calculus with subtyping](/assets/img/2022-06-27-Types and Programming Languages #3.assets/image-20220424105105070.png)
+![Simply typed lambda-calculus with subtyping](/assets/img/Types and Programming Language.assets/image-20220424105105070.png)
 
 添加记录（Record）的额外规则。
 
-![Records](/assets/img/2022-06-27-Types and Programming Languages #3.assets/image-20220424105704730.png)
+![Records](/assets/img/Types and Programming Language.assets/image-20220424105704730.png)
 
-![Records and subtyping](/assets/img/2022-06-27-Types and Programming Languages #3.assets/image-20220424105737576.png)
+![Records and subtyping](/assets/img/Types and Programming Language.assets/image-20220424105737576.png)
 
 ### 性质
 
@@ -47,13 +47,13 @@ $$S<:T$$ 表示任何类型为 $$S$$ 的值类型也可以是 $$T$$，即 $$S$$ 
 
 在子类型系统中添加 Top 类型和 Bot 类型分别作为所有类型的父类和子类。Bot 类型没有任何成员。Top 类型在实际语言中比较常见，但 Bot 类型将需要在未来得到更充分的叙述。
 
-![Bottom type](/assets/img/2022-06-27-Types and Programming Languages #3.assets/image-20220424122147422.png)
+![Bottom type](/assets/img/Types and Programming Language.assets/image-20220424122147422.png)
 
 ### 其他特性
 
 #### 类型转换
 
-![Casting](/assets/img/2022-06-27-Types and Programming Languages #3.assets/image-20220424140201604.png)
+![Casting](/assets/img/Types and Programming Language.assets/image-20220424140201604.png)
 
 在子类型系统中，类型注解（ascription）升级为类型转换（casting），分为类型上升（up-casting）和类型下降（down-casting）。其中类型上升是将子类元素委派为父类，类型下降反之。
 
@@ -63,15 +63,15 @@ $$S<:T$$ 表示任何类型为 $$S$$ 的值类型也可以是 $$T$$，即 $$S$$ 
 
 #### 变体 Variants
 
-![Variants and subtyping](/assets/img/2022-06-27-Types and Programming Languages #3.assets/image-20220424135903666.png)
+![Variants and subtyping](/assets/img/Types and Programming Language.assets/image-20220424135903666.png)
 
 #### 链表  
 
-![Lists with subtyping](/assets/img/2022-06-27-Types and Programming Languages #3.assets/image-20220424140134804.png)
+![Lists with subtyping](/assets/img/Types and Programming Language.assets/image-20220424140134804.png)
 
 #### 引用
 
-![References with subtyping](/assets/img/2022-06-27-Types and Programming Languages #3.assets/image-20220424140231738.png)
+![References with subtyping](/assets/img/Types and Programming Language.assets/image-20220424140231738.png)
 
 需要 $$Ref\ T_1$$ 的场景对 $$Ref\ S_1$$ 也适用。引用有赋值和解引用两个操作，其中赋值（$$Ref\ T_1:=$$）需要 $$T_1<:S_1$$，解引用（$$!(Ref\ T_1)$$）需要 $$S_1<:T_1$$。
 
@@ -81,11 +81,11 @@ $$S<:T$$ 表示任何类型为 $$S$$ 的值类型也可以是 $$T$$，即 $$S$$ 
 
 数组是一串引用
 
-![Array](/assets/img/2022-06-27-Types and Programming Languages #3.assets/image-20220424141846419.png)
+![Array](/assets/img/Types and Programming Language.assets/image-20220424141846419.png)
 
 #### 交类型和并类型
 
-![Intersection types](/assets/img/2022-06-27-Types and Programming Languages #3.assets/image-20220424142340788.png)
+![Intersection types](/assets/img/Types and Programming Language.assets/image-20220424142340788.png)
 
 这表明，如果有函数是 $$S\to T_1$$ 和 $$S\to T_2$$ 的交类型，那么传入 $$S$$ 类型作为参数，得到的类型是 $$T_1$$ 和 $$T_2$$ 的交类型。可以当做**函数重载**。
 
@@ -105,17 +105,17 @@ $$S<:T$$ 表示任何类型为 $$S$$ 的值类型也可以是 $$T$$，即 $$S$$ 
 
 我们首先将 $$S\text-R\scriptsize CD\normalsize W\scriptsize IDTH$$、$$S\text-R\scriptsize CD\normalsize D\scriptsize EPTH$$、$$S\text-R\scriptsize CD\normalsize P\scriptsize ERM$$ 合为一个规则 $$S\text-R\scriptsize CD$$。并删去了两个（不必要的）规则。
 
-![Algorithmic subtyping](/assets/img/2022-06-27-Types and Programming Languages #3.assets/image-20220424210352738.png)
+![Algorithmic subtyping](/assets/img/Types and Programming Language.assets/image-20220424210352738.png)
 
 可以证明这些规则是安全且完备的（soundness and completeness）：$$S<:T\iff\vert\!\!\!\rightarrow S<:T$$ 
 
 再给出一个算法，该算法是有穷的（termination）。
 
-![subtype](/assets/img/2022-06-27-Types and Programming Languages #3.assets/image-20220424212509179.png)
+![subtype](/assets/img/Types and Programming Language.assets/image-20220424212509179.png)
 
 ### 算法类型（algorithmic typing）
 
-![Algorithmic typing](/assets/img/2022-06-27-Types and Programming Languages #3.assets/image-20220424213424464.png)
+![Algorithmic typing](/assets/img/Types and Programming Language.assets/image-20220424213424464.png)
 
 通过改写规则的应用情况，使类型检查成为可能。
 
@@ -130,7 +130,7 @@ $$S<:T$$ 表示任何类型为 $$S$$ 的值类型也可以是 $$T$$，即 $$S$$ 
 
 用变体类型表示的一个链表 $$NatList=\langle nil:Unit,cons:\lbrace Nat,NatList\rbrace\rangle$$。
 
-![NatList](/assets/img/2022-06-27-Types and Programming Languages #3.assets/image-20220424144807994.png)
+![NatList](/assets/img/Types and Programming Language.assets/image-20220424144807994.png)
 
 为了将类型名单独放在左侧，递归过程放在右侧，现在引入递归符号 $$\mu$$，$$NatList=\mu X.\langle nil:Unit,cons:\lbrace Nat,X\rbrace\rangle$$与上述定义同义。其中 $$\mu X$$ 表示 $$X$$ 满足 $$X=\langle nil:Unit,cons:\lbrace Nat,X\rbrace\rangle$$ 这一无限递归。
 
@@ -192,11 +192,11 @@ unfold[\mu X.T] &:& \mu X.T\to[X\mapsto\mu X.T]T \\
 fold[\mu X.T] &:& [X\mapsto\mu X.T]T\to\mu X.T \\
 \end{array}
 $$
-![isomorphism](/assets/img/2022-06-27-Types and Programming Languages #3.assets/image-20220424154912202.png)
+![isomorphism](/assets/img/Types and Programming Language.assets/image-20220424154912202.png)
 
 它们的结果是一个关于类型的函数，可以将递归类型的展开形式和折叠形式作转换。
 
-![Iso-recursive types](/assets/img/2022-06-27-Types and Programming Languages #3.assets/image-20220424153629180.png)
+![Iso-recursive types](/assets/img/Types and Programming Language.assets/image-20220424153629180.png)
 
 ### 元理论
 
@@ -210,9 +210,9 @@ $$
 
 用推理规则表示函数的输入集合和输出集合，比如函数 $$E_1$$
 
-![E1 function](/assets/img/2022-06-27-Types and Programming Languages #3.assets/image-20220424221512176.png)
+![E1 function](/assets/img/Types and Programming Language.assets/image-20220424221512176.png)
 
-![E1 function inference rules](/assets/img/2022-06-27-Types and Programming Languages #3.assets/image-20220424221530847.png)
+![E1 function inference rules](/assets/img/Types and Programming Language.assets/image-20220424221530847.png)
 
 命题：*F-closed* 的集合的交集是 $$F$$ 的最小的 *fixed point*；*F-consistent* 的集合的并集是 $$F$$ 的最大的 *fixed point*。
 
@@ -254,15 +254,15 @@ $$
 
 定义 $$C$$ 作为类型约束的集合，$$\Gamma\vdash t:T\mid_{\mathcal X}C$$ 表示如果 $$C$$ 被满足，则 $$t$$ 在上下文 $$\Gamma$$ 中具有类型 $$T$$，$$\mathcal X$$ 用来记录类型变量。
 
-![Constraint typing rules](/assets/img/2022-06-27-Types and Programming Languages #3.assets/image-20220424235051777.png)
+![Constraint typing rules](/assets/img/Types and Programming Language.assets/image-20220424235051777.png)
 
-![Unification algorithm](/assets/img/2022-06-27-Types and Programming Languages #3.assets/image-20220425000654597.png)
+![Unification algorithm](/assets/img/Types and Programming Language.assets/image-20220425000654597.png)
 
 ### 多态 Lambda 表达式
 
 将类型作为参数，得到多态 Lambda 表达式。类似 C++ 里的模版。
 
-![Polymorphic lambda-calculus](/assets/img/2022-06-27-Types and Programming Languages #3.assets/image-20220425001052973.png)
+![Polymorphic lambda-calculus](/assets/img/Types and Programming Language.assets/image-20220425001052973.png)
 
 $$
 \begin{align*}

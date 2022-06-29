@@ -48,6 +48,7 @@ def ranomize_by_swap(array):
 `RANDOM_PERMUTE_C` 越大则 `p` 中的优先级越唯一，排序结果越均匀。
 
 **把球投到箱子里**（用于分析散列的模型）的问题。平均投多少个球才能使每个箱子中有一个球：
+
 $$
 \begin{align*}
 &\text{设箱子 $b$ 个，平均投球 $n$ 个；}\\
@@ -55,8 +56,8 @@ $$
 &\text{在前 $i-1$ 次时投到第 $i$ 个箱子的概率为 $\frac{b-i+1}b$, $n_i$ 服从关于 $i$ 的几何分布}\\[1em]
 E[n_i]&={b\over b-i+1},\qquad n=\sum_{i=1}^{b} n_i,\\
 E[n]&=\sum_{i=1}^bE[n_i]=\sum_{i=1}^b{b\over b-i+1}\\
-&\xlongequal{i\leftarrow b-i+1}\sum_{i=1}^b \frac bi\\
-&\xlongequal{调和级数前\ b\ 项和}b(\ln b+\frac1{2b})\\
+&\overset{i\leftarrow b-i+1}{====}\sum_{i=1}^b \frac bi\\
+&\overset{调和级数前\ b\ 项和}{=======}b(\ln b+\frac1{2b})\\
 &=b\ln b+O(1)
 \end{align*}
 $$
@@ -65,17 +66,18 @@ $$
 **期望特征序列长度的界**（抛硬币 $$n$$ 次所得的最长正面期望长度）：
 
 $$L$$ 为最长序列长度，$$L_i$$ 为该长度为 $$i$$ 的事件。注意到 $$i,Pr\lbrace L_i\rbrace$$ 呈负相关，当 $$i$$ 较小时 $$Pr\lbrace L_i\rbrace$$ 较大；反之亦然。
+
 $$
 \begin{align*}
 E[L]&=\sum_{i=0}^{n}i\cdot Pr\lbrace L_i\rbrace\\
     &=\sum_{i=0}^{2\lceil\lg n\rceil-1}i\cdot Pr\lbrace L_i\rbrace+\sum_{i=2\lceil\lg n\rceil}^ni\cdot Pr\lbrace L_i\rbrace\\
     &<2\lceil\lg n\rceil\sum_{i=0}^{2\lceil\lg n\rceil-1}Pr\lbrace L_i\rbrace+n\sum_{i=2\lceil\lg n\rceil}^nPr\lbrace L_i\rbrace\\
-    &\xlongequal{\sum_{i=0}^{2\lceil\lg n\rceil-1}Pr\lbrace L_i\rbrace<1,\quad\sum_{i=2\lceil\lg n\rceil}^nPr\lbrace L_i\rbrace<1/n}\\
+    &\overset{\sum_{i=0}^{2\lceil\lg n\rceil-1}Pr\lbrace L_i\rbrace<1,\quad\sum_{i=2\lceil\lg n\rceil}^nPr\lbrace L_i\rbrace<1/n}{===================}\\
     &<2\lceil\lg n\rceil+1=O(\lg n)\\
 E[L]&=\sum_{i=0}^{n}i\cdot Pr\lbrace L_i\rbrace\\
     &=\sum_{i=0}^{\lfloor(\lg n)/2\rfloor-1}i\cdot Pr\lbrace L_i\rbrace+\sum_{i=\lfloor(\lg n)/2\rfloor}^ni\cdot Pr\lbrace L_i\rbrace\\
     &\ge\sum_{i=0}^{\lfloor(\lg n)/2\rfloor-1}0\cdot Pr\lbrace L_i\rbrace+\sum_{i=\lfloor(\lg n)/2\rfloor}^n\lfloor(\lg n)/2\rfloor\cdot Pr\lbrace L_i\rbrace\\
-    &\xlongequal{\sum_{i=\lfloor(\lg n)/2\rfloor}^nPr\lbrace L_i\rbrace\ge1-O(1/n)}\\
+    &\overset{\sum_{i=\lfloor(\lg n)/2\rfloor}^nPr\lbrace L_i\rbrace\ge1-O(1/n)}{=============}\\
     &\ge\lfloor(\lg n)/2\rfloor(1-O(1/n))=\Omega(\lg n)
 \end{align*}
 $$
@@ -150,7 +152,7 @@ plt.legend()
 plt.show()
 ~~~
 
-![index](/assets/img/Introduction to Algorithms #1.assets/index-1655557247054.png)![index](/assets/img/Introduction to Algorithms #1.assets/index-1655557287879.png)
+![index](/assets/img/Introduction to Algorithms.assets/index-1655557247054.png)![index](/assets/img/Introduction to Algorithms.assets/index-1655557287879.png)
 
 可见 $$E[L]\approx 1.410515920608434\ln n$$
 
@@ -159,6 +161,7 @@ plt.show()
 拒绝前 $$k$$ 个，获得前 $$k$$ 个应聘者的最高分，接受之后第一个高于该最高分的应聘者，$$k=n/e$$。
 
 $$S,S_i,B_i,O_i$$ 分别为成功得到最高分应聘者、成功得到最高分应聘者且在第 $$i$$ 位、最高分应聘者在第 $$i$$ 位、前 $$i-1$$ 个应聘者被拒绝。
+
 $$
 \begin{align*}
 Pr\lbrace S\rbrace&=\sum_{i=k+1}^nPr\lbrace S_i\rbrace\\
@@ -188,7 +191,7 @@ $$
   \begin{align*}
   T(a,b)&=T(0,1)\times bitsize\times E(loop)\\[1em]
         &=T(0,1)\times\lceil\lg(b-a)\rceil\times\sum_{i=0}^\infty(i+1)(1-{b-a\over2^{\lceil\lg(b-a)\rceil}})^i{b-a\over2^{\lceil\lg(b-a)\rceil}}\\
-        &\xlongequal{p={b-a\over2^{\lceil\lg(b-a)\rceil}}}T(0,1)\times\lceil\lg(b-a)\rceil\times p\left(\sum_{i=0}^\infty\left(1-p\right)^{i+1}\right)^\prime\\
+        &\overset{p={b-a\over2^{\lceil\lg(b-a)\rceil}}}{=====}T(0,1)\times\lceil\lg(b-a)\rceil\times p\left(\sum_{i=0}^\infty\left(1-p\right)^{i+1}\right)^\prime\\
         &=T(0,1)\times\lceil\lg(b-a)\rceil\times \frac1p\\
         &=T(0,1)\times\lceil\lg(b-a)\rceil\times{2^{\lceil\lg(b-a)\rceil}\over b-a}\\
         &<T(0,1)\times\lceil\lg(b-a)\rceil\times{2\times 2^{\lg(b-a)}\over b-a}\\[1em]
@@ -208,6 +211,7 @@ $$
   $$times={1 − 2p(p − 1)\over2p(p − 1)}$$
 
 - HIRE-ASSISTANT 中雇佣一次的概率和 n 次的概率
+- 
   $$
   \begin{align*}
   一次&: a_0 \ge a_i(i>0) & Pr&=\frac1n \\
@@ -217,6 +221,7 @@ $$
   $$
 
 - $$[1..n]$$ 上的均匀随机数列的逆序对个数期望
+
   $$
   \begin{align*}
   &\text{let $f(i,j)$ represent $i<j\wedge A[i]>A[j]$} \\
@@ -260,6 +265,7 @@ $$
 - `[random.randrange(0, n ** 3) for _ in range(n)]` 产生的元素都唯一的概率至少为 $$1-1/n$$
 
   求不唯一的概率为
+  
   $$
   \begin{align*}
   Pr\lbrace \exists i,j\in[0..n-1](i\ne j\wedge P[i]=P[j])\rbrace&=Pr\lbrace \bigcup _{i,j\in[0..n-1],i\ne j}P[i]=P[j]\rbrace\\
@@ -290,20 +296,25 @@ $$
   `random_sample(1, n)` 成立，因为 `i in s` 恒为 `False`；`random_sample(n, n)` 成立，因为 `i in s` 恒为 `True`。
 
   如果 `random_sample(m - 1, n - 1)` 产生等可能的 $$[0..n-2]$$ 的 m-1 子集，则由于 `random.randrange(0, n)` 产生 $$[0..n-1]$$ 的任意一个数，$$n-1$$ 被添加的概率为
+  
   $$
   \begin{align*}
   \underbrace{n-1\over n}_{i\in[0..n-2]}\cdot\underbrace{C_{n-2}^{m-2}\over C_{n-1}^{m-1}}_{i\in random\text-sample(m - 1, n - 1)}+\frac1n=\frac mn
   \end{align*}
   $$
+  
   其他数在其中的概率（可能被添加，也可能已经在了）
+  
   $$
   \begin{align*}
   \frac1n(1-{m-1\over n-1})+{m-1\over n-1}=\frac mn
   \end{align*}
   $$
+  
   因此所有数的概率都为 $$m/n=C^{m-1}_{n-1}/C^m_n$$
 
 - 生日悖论
+
   $$
   \begin{align*}
   \text{let $my birthday=b$}\\
@@ -321,6 +332,7 @@ $$
 - 投到任一箱子里有两个球的期望
 
   投入第 $$i$$ 个球使仍未成功，说明此时有 $$i$$ 个箱子中有球，设次数为 $$n$$
+  
   $$
   \begin{align*}
   E[n]&=\sum_{i=2}^{b+1}i\cdot Pr\lbrace n=i\rbrace\\
@@ -345,6 +357,7 @@ $$
   使用指示器随机变量分析会比较简单。
 
 - n 球投入 n 箱，空箱子的期望
+
   $$
   \begin{align*}
   E[empty]&=E[\sum_{i=1}^nI\lbrace nboxes[i].isempty\rbrace]\\
