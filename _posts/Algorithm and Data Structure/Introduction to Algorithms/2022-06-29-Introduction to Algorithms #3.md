@@ -150,7 +150,7 @@ plt.legend()
 plt.show()
 ~~~
 
-![index](/assets/img/Introduction to Algorithms %231.assets/index-1655557247054.png)![index](/assets/img/Introduction to Algorithms %231.assets/index-1655557287879.png)
+![index](/assets/img/Introduction to Algorithms #1.assets/index-1655557247054.png)![index](/assets/img/Introduction to Algorithms #1.assets/index-1655557287879.png)
 
 可见 $$E[L]\approx 1.410515920608434\ln n$$
 
